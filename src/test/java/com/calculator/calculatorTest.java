@@ -71,4 +71,12 @@ public class calculatorTest {
 
         assertThat(testResult, equalTo("10"));
     }
+
+    @Test
+    public void calculate_givenIntegerTenAndIntegerTenAndOperatorDivide_returnsStringFive() throws Exception {
+        testResult = testCalculator.calculate(10, 2, "divide");
+
+        assertThat(testResult, equalTo("5"));
+
+    }
 }
