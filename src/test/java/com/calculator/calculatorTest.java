@@ -13,7 +13,7 @@ public class calculatorTest {
     public void calculate_givenIntegerFiveAndIntegerFiveAndOperatorAdd_returnStringTen() throws Exception {
         Calculator testCalculator = new Calculator();
         String testResult;
-        
+
         testResult = testCalculator.calculate(5, 5, "add");
 
         assertThat(testResult, equalTo("10"));
