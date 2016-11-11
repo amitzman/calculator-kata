@@ -60,8 +60,15 @@ public class calculatorTest {
     @Test
     public void calculate_givenIntegerTenAndIntegerTenAndOperationMultiply_returnsStringOneHundred() throws Exception {
         testResult = testCalculator.calculate(10, 10, "multiply");
-        
+
         assertThat(testResult, equalTo("100"));
 
+    }
+
+    @Test
+    public void calculate_givenIntegerFiftyAndIntegerFiveAndOperatorDivide_returnsStringTen() throws Exception {
+        testResult = testCalculator.calculate(50, 5, "divide");
+
+        assertThat(testResult, equalTo("10"));
     }
 }
