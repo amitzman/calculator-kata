@@ -1,5 +1,6 @@
 package com.calculator;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -9,11 +10,17 @@ import static org.junit.Assert.*;
  * Created by localadmin on 11/11/16.
  */
 public class calculatorTest {
+    String testResult;
+    Calculator testCalculator;
+
+    @Before
+    public void setUp() throws Exception {
+        testCalculator = new Calculator();
+
+    }
+
     @Test
     public void calculate_givenIntegerFiveAndIntegerFiveAndOperatorAdd_returnStringTen() throws Exception {
-        Calculator testCalculator = new Calculator();
-        String testResult;
-
         testResult = testCalculator.calculate(5, 5, "add");
 
         assertThat(testResult, equalTo("10"));
@@ -22,9 +29,6 @@ public class calculatorTest {
 
     @Test
     public void calculate_givenIntegerFiveAndIntegerSixAndOperatorAdd_returnsStringEleven() throws Exception {
-        Calculator testCalculator = new Calculator();
-        String testResult;
-
         testResult = testCalculator.calculate(5, 6, "add");
 
         assertThat(testResult, equalTo("11"));
@@ -32,9 +36,6 @@ public class calculatorTest {
 
     @Test
     public void calculate_givenIntegerTenAndInteger5AndOperatorSubtract_returnsStringFive() throws Exception {
-        Calculator testCalculator = new Calculator();
-        String testResult;
-
         testResult = testCalculator.calculate(10, 5, "subtract");
 
         assertThat(testResult, equalTo("5"));
@@ -42,12 +43,17 @@ public class calculatorTest {
 
     @Test
     public void calculate_givenIntegerTenAndInteger6AndOperatorSubtract_returnsStringFour() throws Exception {
-        Calculator testCalculator = new Calculator();
-        String testResult;
-
         testResult = testCalculator.calculate(10, 6, "subtract");
 
         assertThat(testResult, equalTo("4"));
+
+    }
+
+    @Test
+    public void calculate_givenIntegerFourAndIntegerFourAndOperatorMultiply_returnsStringSixteen() throws Exception {
+        testResult = testCalculator.calculate(4, 4, "multiply");
+
+        assertThat(testResult, equalTo("16"));
 
     }
 }
