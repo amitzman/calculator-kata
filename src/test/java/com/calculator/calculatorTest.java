@@ -39,4 +39,15 @@ public class calculatorTest {
 
         assertThat(testResult, equalTo("5"));
     }
+
+    @Test
+    public void calculate_givenIntegerTenAndInteger6AndOperatorSubtract_returnsStringFour() throws Exception {
+        Calculator testCalculator = new Calculator();
+        String testResult;
+
+        testResult = testCalculator.calculate(10, 6, "subtract");
+
+        assertThat(testResult, equalTo("4"));
+
+    }
 }
