@@ -6,7 +6,7 @@ public class Calculator {
         Integer result = number1;
 
         isValidOperator(operator);
-        
+
         switch(operator){
             case("add"): result += number2; break;
             case("subtract"): result -= number2; break;
