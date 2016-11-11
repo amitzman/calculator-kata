@@ -79,4 +79,9 @@ public class calculatorTest {
         assertThat(testResult, equalTo("5"));
 
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void exectue_givenNonValidOperator_throwsException() throws Exception {
+        testCalculator.calculate(5, 5, "InvalidOperator");
+    }
 }
