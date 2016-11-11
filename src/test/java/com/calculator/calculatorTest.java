@@ -19,4 +19,14 @@ public class calculatorTest {
         assertThat(testResult, equalTo("10"));
 
     }
+
+    @Test
+    public void calculate_givenIntegerFiveAndIntegerSixAndOperatorAdd_returnsStringEleven() throws Exception {
+        Calculator testCalculator = new Calculator();
+        String testResult;
+
+        testResult = testCalculator.calculate(5, 6, "add");
+
+        assertThat(testResult, equalTo("11"));
+    }
 }
