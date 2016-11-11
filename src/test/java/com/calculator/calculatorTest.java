@@ -56,4 +56,12 @@ public class calculatorTest {
         assertThat(testResult, equalTo("16"));
 
     }
+
+    @Test
+    public void calculate_givenIntegerTenAndIntegerTenAndOperationMultiply_returnsStringOneHundred() throws Exception {
+        testResult = testCalculator.calculate(10, 10, "multiply");
+        
+        assertThat(testResult, equalTo("100"));
+
+    }
 }
