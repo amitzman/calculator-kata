@@ -29,4 +29,14 @@ public class calculatorTest {
 
         assertThat(testResult, equalTo("11"));
     }
+
+    @Test
+    public void calculate_givenIntegerTenAndInteger5AndOperatorSubtract_returnsStringFive() throws Exception {
+        Calculator testCalculator = new Calculator();
+        String testResult;
+
+        testResult = testCalculator.calculate(10, 5, "subtract");
+
+        assertThat(testResult, equalTo("5"));
+    }
 }
