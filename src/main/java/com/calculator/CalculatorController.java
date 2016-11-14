@@ -21,6 +21,7 @@ public class CalculatorController {
     @RequestMapping("/{input1}/{input2}/{inputOperator}")
     @ResponseBody
     public ResponseEntity<CalculatorResponse> getCalculation(@PathVariable("input1") Integer input1, @PathVariable("input2") Integer input2, @PathVariable("inputOperator")String inputOperator) {
-        return new ResponseEntity<>(new CalculatorResponse("5"), HttpStatus.OK);
+        Integer sum = input1 + input2;
+        return new ResponseEntity<>(new CalculatorResponse(sum.toString()), HttpStatus.OK);
     }
 }
