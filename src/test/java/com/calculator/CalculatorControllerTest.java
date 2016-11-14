@@ -58,4 +58,14 @@ public class CalculatorControllerTest {
         calculatorController.perform(get("/calculator/{input1}/{input2}/{input3}", userInput1, userInput2, userOperatorInput))
             .andExpect(jsonPath("$.response").value(is("6")));
     }
+
+    @Test
+    public void getCalculator_passedIntegerTenIntegerFiveAndOperatorSubtract_RetrunsStringFive() throws Exception {
+        int userInput1 = 10;
+        int userInput2 = 5;
+        String userOperatorInput = "subtract";
+
+        calculatorController.perform(get("/calculator/{input1}/{input2}/{input3}", userInput1, userInput2, userOperatorInput))
+                .andExpect(jsonPath("$.response").value(is("5")));
+    }
 }
