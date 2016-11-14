@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,6 +19,7 @@ public class CalculatorController {
     }
 
     @RequestMapping("/{input1}/{input2}/{inputOperator}")
+    @ResponseBody
     public ResponseEntity<CalculatorResponse> getCalculation(@PathVariable("input1") Integer input1, @PathVariable("input2") Integer input2, @PathVariable("inputOperator")String inputOperator) {
         return new ResponseEntity<>(new CalculatorResponse("5"), HttpStatus.OK);
     }
